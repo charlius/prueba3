@@ -102,8 +102,6 @@
                 </div>
             <?php }?>
         <?php } ?>
-
-   
    
     <section id="servicios">
         <h1>Temas Para debatir--</h1>
