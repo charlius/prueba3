@@ -19,3 +19,23 @@
     font-family: cursive;
     font-size: 20px;
 }
+.ctn-data{
+    width: 90%;
+    margin: auto;
+    padding:10px;
+}
+.p-data{
+    font-family: arial;
+    font-size: 18px;
+    margin-top: 10px;
+    background: rgb(246, 234, 153);
+}
+.ctn-lbl-comentar{
+    width: 100%;
+    text-align: center;
+}
+.lbl-comentar{
+    font-family: cursive;
+    font-size: 20px;
+    text-shadow: 1px 2px 1px rgb(29,56,241);
+}
