@@ -15,7 +15,11 @@
     <title>Document</title>
     <link rel="icon" type="image/png" href="img/icono2.png">
     <link rel="stylesheet"type="text/css" href="css/main.css">
+
+    <!-- css para las tarjetas de los post-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <body>
     <header>
@@ -52,18 +56,17 @@
 
 <!-- body-->
 <div class="contents">
-    <div>
-    <!-- Display posts from database -->
-    <div class="row">
+         <!-- MOSTRAR LOS DATOS Display posts from database -->
+         <div class="row">
             <?php foreach($query as $q){ ?>
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
                     <div class="card text-white bg-dark mt-5" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $q['title'];?></h5>
                             <p class="card-text"><?php echo substr($q['content'], 0, 50);?>...</p>
-                      <!--  <img class="card-img" src="img/fondo.png"  alt=""> -->
-                        <img src="<?php echo $q['img']; ?>" alt="" title=" ?>" width="250" height="200" class="img-responsive" />
-                        
+                            <!--  <img class="card-img" src="img/fondo.png"  alt=""> -->
+                                <img src="<?php echo $q['img']; ?>" alt="" title=" ?>" width="250" height="200" class="img-responsive" />
+                                
                             
                             <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Lee mas <span class="text-danger">&rarr;</span></a>
                         </div>
@@ -71,60 +74,25 @@
                 </div>
             <?php }?>
         </div>
-         
-        </div>
-       
-  
+          <!-- Display any info -->
+          <?php if(isset($_REQUEST['info'])){ ?>
+            <?php if($_REQUEST['info'] == "added"){?>
+                <div class="alert alert-success" role="alert">
+                <!-- La publicación se ha agregado correctamente -->
+                </div>
+            <?php }?>
+        <?php } ?>
 
-       
-       
-
-
-
-    <section id="productos">
-        <h1>Temas Populares</h1>
-
-        <div class="div-grid">
-            <div class="grid-item">
-                <div class="content-img-pro">
-                    <img src="img/cambio.jpg" alt="">
-                    </div>
-                    <h3>Cambio climatico</h3>
-                    <p>Lorem ipsum dolor sit, amet consm ipsam maxime</p>
-            </div>
-            <div class="grid-item">
-                <div class="content-img-pro">
-                    <img src="img/climatico.jpg" alt="">
-                    </div>
-                    <h3>Sequia</h3>
-                    <p>Lorem ipsum dolor sit, amet consm ipsam maxime</p>
-            </div>
-            <div class="grid-item">
-                <div class="content-img-pro">
-                    <img src="img/elecciones2.jpg" alt="">
-                    </div>
-                    <h3>Elecciones 2021</h3>
-                    <p>Lorem ipsum dolor sit, amet consm ipsam maxime</p>
-            </div>
-            <div class="grid-item">
-                <div class="content-img-pro">
-                    <img src="img/universo.jpg" alt="">
-                    </div>
-                    <h3>Universo Cinematografico</h3>
-                    <p>Lorem ipsum dolor sit, amet consm ipsam maxime</p>
-            </div>
-        </div>
-    
-    </section>
+   
    
     <section id="servicios">
         <h1>Temas Para debatir--</h1>
 
         <div class="div-grid">
             <div class="grid-item">
-                <div class="content-img-pro">
-                    <a href="https://energia.gob.cl/">
-                    <img src="img/energia.jpg" alt=""></a>
+                    <div class="content-img-pro">
+                        <a href="https://energia.gob.cl/">
+                        <img src="img/energia.jpg" alt=""></a>
                     </div>
                     <h3>Cambio energetico</h3>
                     <p>Lorem ipsum dolor sit, amet consm ipsam maxime</p>
